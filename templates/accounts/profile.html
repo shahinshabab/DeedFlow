@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Profile | DeedFlow{% endblock %}
+{% block content %}
+<div class="card border-0 shadow-sm"><div class="card-body">
+  <h1 class="h4">Profile</h1>
+  <p class="mb-1"><strong>Username:</strong> {{ user.username }}</p>
+  <p class="mb-0"><strong>Email:</strong> {{ user.email|default:"Not set" }}</p>
+</div></div>
+{% endblock %}

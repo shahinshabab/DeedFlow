@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Login | DeedFlow{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body p-4">
+        <h1 class="h4 mb-1">Login</h1>
+        <p class="text-muted mb-4">Access your DeedFlow workspace</p>
+        <form method="post" novalidate>
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          <div class="mb-3"><label class="form-label">Username</label>{{ form.username }}</div>
+          <div class="mb-3"><label class="form-label">Password</label>{{ form.password }}</div>
+          <button class="btn btn-dark w-100">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

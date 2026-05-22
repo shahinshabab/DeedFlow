@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Registration Draft | DeedFlow{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3"><div><h1 class="h3 mb-1">Registration Draft</h1><div class="text-muted">{{ draft.document.title }}</div></div><a class="btn btn-dark" href="{% url 'registration:draft_update' draft.pk %}">Edit Review</a></div>
+<div class="card border-0 shadow-sm"><div class="card-body"><pre class="small" style="white-space: pre-wrap;">{{ draft.reviewed_data|default:draft.structured_data }}</pre></div></div>
+{% endblock %}

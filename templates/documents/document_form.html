@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Upload PDF | DeedFlow{% endblock %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-lg-7">
+<div class="card border-0 shadow-sm"><div class="card-body p-4">
+<h1 class="h4 mb-3">Upload Document PDF</h1>
+<form method="post" enctype="multipart/form-data" novalidate>
+  {% csrf_token %}
+  {% for field in form %}<div class="mb-3"><label class="form-label">{{ field.label }}</label>{{ field }}<div class="text-danger small">{{ field.errors }}</div></div>{% endfor %}
+  <button class="btn btn-dark">Save Upload</button>
+  <a href="{% url 'documents:list' %}" class="btn btn-outline-secondary">Cancel</a>
+</form>
+</div></div>
+</div></div>
+{% endblock %}
